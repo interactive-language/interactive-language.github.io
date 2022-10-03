@@ -1,1 +1,144 @@
-Hello, Robot.
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Interactive Language</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://use.typekit.net/quv7bsd.css"> <!-- fonts -->
+        <link rel="stylesheet" href="flickity.min.css">
+        <script src="flickity.pkgd.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Note: add back google analytics! -->
+    </head>
+    <body id="body">
+        <div id="main"> 
+            <header id="header"></header>
+            <!-- style="padding-bottom:1em" -->
+            <div id="profile">
+                <!-- <img src="images/profile.jpg"> -->
+                <div id="profile-desc">
+                    <div id="profile-name">Interactive Language:</div>
+                    <div id="profile-subname">Talking to Robots in Real Time
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+
+            <!-- Simple, centered version -->
+            <div class="section abstract">
+            <p>
+            <video width="100%" playsinline="" muted="" autoplay="" loop="" controls>
+                <source src="video/realtime_30.mp4" type="video/mp4">
+            </video>
+            </p>
+            </div>
+
+            
+            <div class="section recent-work">
+                <div class="highlight-proj" style="width: 400px">
+                    <video height="200px" playsinline="" muted="" autoplay="" loop="" controls><source src="video/physical_4x.mp4" type="video/mp4"></video>
+                </div>
+                <div class="highlight-proj" style="width: 500px">
+                    <video height="200px" playsinline="" muted="" autoplay="" loop="" controls><source src="video/hat_2x.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+            
+
+            <div class="section abstract">
+            <h2><b>Abstract</b></h2>
+            <p>As robots become more prevalent in human spaces, they will be expected to not only follow a wide range of instructions, but to do so in real time. 
+               We present a framework for building interactive, real-time, natural language-instructable robots in the real world, and we open source related assets (dataset, environment,  benchmark, and policies).
+               Trained with behavioral cloning on a dataset of hundreds of thousands of  language-annotated trajectories, a produced policy can proficiently execute an order of magnitude more commands than previous works: specifically we estimate a 93.5% success rate on a set of 87,000 unique natural language strings specifying raw end-to-end visuolinguo-motor skills in the real world.
+               We find that the same policy is capable of being guided by a human via real-time language to address a wide range of precise long-horizon rearrangement goals, e.g. <i>"make a smiley face out of blocks"</i>. The dataset we release comprises nearly 600,000 language-labeled trajectories, an order of magnitude larger than prior available datasets.
+               We hope the demonstrated results and associated assets enable further advancement of helpful, capable, natural-language-interactable robots.</p>
+            </div>
+
+            <div class="section abstract">
+            <h2><b>Video Summary (with narrated audio, 3 minutes)</b></h2>
+            <p><iframe width="900" height="506px"
+                src="https://www.youtube.com/embed/R07EWu1T9HU?rel=0&amp;autoplay=1&loop=1">
+                </iframe></p>
+            </div>
+
+
+
+            <div class="section paper">
+            <h2 style="margin-bottom: 20px;"><b>Examples: Diverse, Short-Horizon Skills</b></h2>
+                <p style="margin-bottom: 20px; margin-left: 30px">Videos at <b>1x speed</b>:</p>
+                <div class="section recent-work">
+                    <div class="highlight-proj">
+                        <p style="font-size: 18px; margin-top: 5px; margin-bottom: 5px; margin-left: 0px"><i>(1 training example)</i></p>
+                        <iframe width="280" height="170"
+                src="https://www.youtube.com/embed/9fdEhmp8DGk?rel=0&amp;autoplay=1&mute=1&loop=1">
+                </iframe>
+                        <p style="font-size: 18px; margin-top: 5px; margin-left: 0px">"push the <span style="color: #5fa800;">green</span> circle and <br> <span style="color: blue;">blue</span> triangle towards <br> the <i>group of blocks</i>"</p>
+                    </div>
+                    <div class="highlight-proj">
+                        <p style="font-size: 18px; margin-top: 5px; margin-bottom: 5px;margin-left: 0px"><i>(0 training examples)</i></p>
+                        <iframe width="280" height="170"
+                src="https://www.youtube.com/embed/dsaxosTjbPo?rel=0&amp;autoplay=1&mute=1&loop=1">
+                </iframe>
+                        <p style="font-size: 18px; margin-top: 5px; margin-left: 0px">"move the <span style="color: #5fa800;">green</span> star <br> <i>between</i> the <span style="color: #ceac27;">yellow</span> blocks"</p>
+                    </div>
+                    <div class="highlight-proj">
+                        <p style="font-size: 18px; margin-top: 5px; margin-bottom: 5px;margin-left: 0px"><i>(2 training examples)</i></p>
+                        <iframe width="280" height="170"
+                src="https://www.youtube.com/embed/CNXYe1bTD_I?rel=0&amp;autoplay=1&mute=1&loop=1">
+                </iframe>
+                        <p style="font-size: 18px; margin-top: 5px; margin-bottom: 5px;margin-left: 0px">"move <span style="color: blue;">blue</span> triangle to the <br> <i>right</i> of the <span style="color: #5fa800;">green</span> circle"</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="section paper">
+            <h2 style="margin-bottom: 20px;"><b>Examples: Interactive Language Guidance</b></h2>
+                <p style="margin-bottom: 20px; margin-left:  30px; ">Videos at <b>4x speed</b>:</p>
+                <div class="section recent-work">
+                    <div class="highlight-proj">
+                        <iframe width="280" height="170"
+                src="https://www.youtube.com/embed/g30Mwuk8QA4?rel=0&amp;autoplay=1&mute=1&loop=1&showinfo=0&playlist=g30Mwuk8QA4">
+                </iframe>
+                        <p style="font-size: 18px; margin-top: 5px; margin-left: 0px">"Group the blocks by color."</p>
+                    </div>
+                    <div class="highlight-proj">
+                        <iframe width="280" height="170"
+                src="https://www.youtube.com/embed/j0FFHs1kzfg?rel=0&amp;autoplay=1&mute=1&loop=1&showinfo=0&playlist=j0FFHs1kzfg">
+                </iframe>
+                        <p style="font-size: 18px; margin-top: 5px; margin-left: 0px">"Put all the blocks in a vertical line on the right side of the board."</p>
+                    </div>
+                    <div class="highlight-proj">
+                        <p>More examples coming! :)</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Ayzaan, here is the minimal example for synced text -->
+<!--             <div class="section method">
+                <aside id="video">
+                    <video width="445px" src="https://socraticmodels.github.io/images/sm_1_venn.mp4" playsinline="" muted="" autoplay="" loop="" controls style="float: left; margin-right: 30px; padding-left: 10px; padding-bottom: 10px; padding-top: 7px"></video>        
+                </aside>
+                <article data-start="0.75" data-end="3.">
+                  <p><a href="http://en.wikipedia.org/wiki/HTML5_video">HTML5 video</a> is native video for browsers based on the the <code>&lt;video&gt;</code> element..</p>
+                </article>
+                <article data-start="3." data-end="4">
+                  <p><a href="http://www.mirovideoconverter.com/">Miro Video converter</a> is an open source video conversion tool for Mac that makes it very easy to convert videos to all kind of formats via drag and drop.</p>
+                </article>
+            </div>
+            <div style="clear:both;"></div> -->
+
+          
+
+            <div style="clear: both;"></div>
+            <!-- <div class="divider"></div> -->
+
+
+            <br><br><br><br><br><br><br><br><br><br>
+            <div class="divider"></div>
+        </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <script src="sync.js"></script>
+    </body>
+</html>
