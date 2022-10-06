@@ -6,12 +6,14 @@ $(document).ready(function(){
     
     $('aside::first').append('');
 
-    var timestamps = [],
-        last = 0,
-        all = 0,
-        now = 0,
-        old = 0,
-        i=0;
+    // Timestamps is an array of N arrays:
+    // - first index is the "vid-id"
+    // - each is a variable length array of timestamps
+    var timestamps = [];
+    // N is hardcoded here to 9.
+    for (let i = 0; i < 9; i++) {
+      timestamps.push([]);
+    };
 
 /* hide all articles via CSS */
     $('html').addClass('js');
@@ -22,29 +24,24 @@ $(document).ready(function(){
 */
     $('article').each(function(o){
       if($(this).attr('data-start')){
-        timestamps.push({
-          start : +$(this).attr('data-start'),
-          end : +$(this).attr('data-end'),
-          elm : $(this)
-        });
+        if($(this).attr('vid-id')) {
+          timestamps[$(this).attr('vid-id')].push({
+            start : +$(this).attr('data-start'),
+            end : +$(this).attr('data-end'),
+            elm : $(this)
+          });
+        }
       }
     });
 
-    all = timestamps.length;
-
 /* 
-  when the video is playing, round up the time to seconds and call the 
+  when the video is playing, call the 
   showsection function continuously
 */
     $('video').bind('timeupdate',function(event){
-      now = parseFloat(this.currentTime);
-
-      /* throttle function calls to full seconds */
-      if(now > old){
-        showsection(now);
+      if($(this).attr('vid-id')){
+        showsection(parseFloat(this.currentTime), $(this).attr('vid-id'));
       }
-      old = now;
-
     });
 
 /*
@@ -52,12 +49,12 @@ $(document).ready(function(){
   defined timestamps and show the appropriate section.
   Hide all others.
 */
-    function showsection(t){
-      for(i=0;i<all;i++){
-        if(t >= timestamps[i].start && t <= timestamps[i].end){
-          timestamps[i].elm.addClass('current');
+    function showsection(t, vid_id){
+      for(let i = 0; i < timestamps[vid_id].length; i++){
+        if(t >= timestamps[vid_id][i].start && t <= timestamps[vid_id][i].end){
+          timestamps[vid_id][i].elm.addClass('current');
         } else {
-          timestamps[i].elm.removeClass('current');
+          timestamps[vid_id][i].elm.removeClass('current');
         }
       }
     };
