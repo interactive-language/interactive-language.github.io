@@ -140,6 +140,20 @@ h2 {
     font-weight: 500;
 }
 
+  .list-inline {
+      list-style: none;
+      margin-left: -0.5em;
+      margin-right: -0.5em;
+      font-size: 18px;
+      padding-left: 0;
+  }
+  
+  .list-inline > li {
+      display: inline-block;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+  }
+
 
 #profile-subname {
     width: 100%;
